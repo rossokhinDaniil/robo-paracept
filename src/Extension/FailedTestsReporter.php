@@ -65,7 +65,7 @@ class FailedTestsReporter extends Extension
     {
         $name = Descriptor::getTestFullName($e->getTest());
 
-        return substr(str_replace($this->getRootDir(), '', $name), 1);
+        return str_replace($this->getRootDir(), '', $name);
     }
 
     public function getUniqReportFile(): string

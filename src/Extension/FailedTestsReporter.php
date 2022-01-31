@@ -33,6 +33,7 @@ class FailedTestsReporter extends Extension
      */
     public static array $events = [
         Events::TEST_FAIL => 'afterFail',
+        Events::TEST_ERROR => 'afterFail',
         Events::RESULT_PRINT_AFTER => 'endRun',
     ];
 

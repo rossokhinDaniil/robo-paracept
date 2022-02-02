@@ -55,7 +55,11 @@ class FailedTestsReporter extends Extension
         }
 
         $file = $this->getLogDir() . $this->getUniqReportFile();
-        file_put_contents($file, implode(PHP_EOL, $this->failedTests), FILE_APPEND);
+        if (is_file($file)) {
+            unlink($file); // remove old reportFile
+        }
+
+        file_put_contents($file, implode(PHP_EOL, $this->failedTests));
     }
 
     public function getTestName(TestEvent $e): string

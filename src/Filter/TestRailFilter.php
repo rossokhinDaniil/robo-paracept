@@ -6,7 +6,7 @@ namespace Codeception\Task\Filter;
 
 use Codeception\Test\Descriptor;
 use Codeception\TestInterface;
-use rossokhinDaniil\CodeceptionTestRail\Services\TestRailAPIClient;
+use boxblinkracer\CodeceptionTestRail\Services\TestRailAPIClient;
 
 /**
  * Class DefaultFilter - The Default Filter which is implemented by default

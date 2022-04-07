@@ -48,7 +48,7 @@ class TestRailFilter implements Filter
             $testCaseId = $this->getTestCaseAnnotations($test);
             if ($testCaseId) {
                 foreach ($testRunCaseId as $caseId) {
-                    if ($caseId == (int)$testCaseId[0]) {
+                    if ($caseId == (int)$testCaseId) {
                         array_push($testPath, $test);
                     }
                 }

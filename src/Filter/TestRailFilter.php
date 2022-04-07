@@ -30,15 +30,15 @@ class TestRailFilter implements Filter
     public function filter(): array
     {
         $client = new TestRailAPIClient(
-            $_ENV["TESTRAIL_URL"],
-            $_ENV["TESTRAIL_USER"],
-            $_ENV["TESTRAIL_PASSWORD"],
+            getenv("TESTRAIL_URL"),
+            getenv("TESTRAIL_USER"),
+            getenv("TESTRAIL_PASSWORD"),
         );
 
         $testRunCaseId = [];
         $testPath = [];
 
-        $response = $client->getRunCase($_ENV["RUN_ID"]);
+        $response = $client->getRunCase(getenv("RUN_ID"));
         foreach ($response as $test){
             array_push($testRunCaseId, $test->case_id);
         }
